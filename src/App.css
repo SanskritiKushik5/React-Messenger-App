@@ -13,18 +13,25 @@ body {
 .messenger {
   background: -webkit-linear-gradient(
     45deg,
-    rgba(255, 166, 10, 1) 24%,
+    rgb(133, 29, 186) 15%,
     rgba(255, 0, 224, 1) 100%
   );
   align-self: center;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .blackName {
-  color: black;
+  color: rgb(0, 0, 0);
 }
 
+.speak {
+  margin-right: 5px;
+}
+.copy {
+  margin-right: -1rem;
+}
 /*====================== new navbar ==========================*/
 
 :root {
@@ -38,25 +45,37 @@ body {
 }
 
 .navbar {
-  background-color: rgb(9, 13, 19);
-  height: 80px;
+  background-color: rgb(255, 255, 255);
+  height: 65px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   position: sticky;
   top: 0;
-  z-index: 20;
+  z-index: 9999;
   box-shadow: 0 4px 8px 0 rgba(253, 251, 251, 0.2),
-    0 6px 10px 0 rgba(196, 168, 168, 0.844);
+    0 6px 10px 0 rgba(173, 173, 173, 0.844);
 }
-
+.nav_dark {
+  background-color: rgb(0, 0, 0);
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  box-shadow: 0 4px 8px 0 rgba(253, 251, 251, 0.2),
+    0 6px 10px 0 rgba(0, 0, 0, 0.844);
+}
 .nav-container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 80px;
+  height: 0px;
   max-width: 1500px;
 }
 
@@ -82,12 +101,22 @@ a {
 }
 
 .nav-links {
-  color: #fff;
+  background: -webkit-linear-gradient(
+    45deg,
+    rgb(133, 29, 186) 15%,
+    rgba(255, 0, 224, 1) 100%
+  );
+
+  align-self: center;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-decoration: none;
   padding: 0.5rem 1rem;
   height: 100%;
   border-bottom: 3px solid transparent;
 }
+
 .fa-code {
   margin-left: 1rem;
 }
@@ -95,11 +124,11 @@ a {
 .nav-item {
   line-height: 40px;
   margin-right: 1rem;
-  outline: 2px solid var(--secondarycolor);
 }
 
 .toggle-nav {
   outline: none;
+  background-color: rgba(128, 0, 128, 0);
 }
 .nav-item:after {
   content: "";
@@ -109,83 +138,23 @@ a {
   background: transparent;
   transition: width 0.7s ease, black 0.5s ease;
 }
-
+.darkthemeicon {
+  color: rgb(148, 3, 148);
+}
 .nav-item:hover:after {
   width: 100%;
   background: var(--secondarycolor);
-}
-
-.nav-item a:active {
-  color: var(--secondarycolor);
-  border: 1px solid var(--secondarycolor);
 }
 
 .nav-icon {
   display: none;
 }
 
-@media screen and (max-width: 960px) {
-  .nav-menu {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    border-top: 1pxsolid #fff;
-    position: absolute;
-    top: 60px;
-    left: -110%;
-    opacity: 0;
-    transition: all 0.5s ease;
-  }
-
-  .nav-menu.active {
-    background: rgb(22, 21, 21);
-    left: 0px;
-    opacity: 1;
-    transition: all 0.5s ease;
-    z-index: 1;
-  }
-  .nav-item a:active {
-    border: none;
-  }
-  .nav-item {
-    color: var(--secondarycolor);
-    border: none;
-    margin: 25px 0px;
-    outline: none;
-  }
-
-  .nav-item:hover {
-    transform: scale(1.2);
-  }
-
-  .nav-item:hover:after {
-    width: 100%;
-    background: var(--secondarycolor);
-  }
-
-  .toggle-nav:hover:after {
-    background: none;
-  }
-
-  .nav-links {
-    padding: 1.5rem;
-    margin-left: -70px;
-    border: none;
-  }
-
-  .nav-icon {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 60%);
-    font-size: 1.8rem;
-    cursor: pointer;
-    color: rgb(252, 249, 249);
-  }
-
-  .toggle-button {
-    margin-right: 70px !important;
+@media (max-width: 500px) {
+  .navbar,
+  .nav-menu,
+  .nav_dark {
+    font-size: large;
   }
 }
 
@@ -201,8 +170,12 @@ input {
 }
 
 .dark_input {
-  background-color: rgb(140, 140, 140);
+  background-color: transparent;
+  border: none;
+  margin-right: 3px;
+  margin-left: 3px;
 }
+
 .loading {
   position: fixed;
   z-index: 1;
@@ -213,13 +186,13 @@ input {
   margin: auto;
 }
 
-@media (max-width: 450px) {
-  .Logo {
-    width: auto;
-    height: 50px;
-    align-self: center;
-  }
+
+.Logo {
+  width: auto;
+  height: 50px;
+  align-self: center;
 }
+
 
 .messenger {
   font-weight: bold;
@@ -271,19 +244,16 @@ footer {
 }
 
 .BlackNavBar {
-  background-color: black !important;
+  background-color: black;
   border-bottom: 1px solid white;
 }
 
 .footer_dark {
   color: white;
-  /* background-color: black; */
-  /* border-top: 1px solid white; */
   padding-bottom: 5px;
 }
 
 .content__footer {
-  /* margin: 0; */
   padding-top: 8px;
   padding-bottom: 0;
   position: fixed;
@@ -306,11 +276,49 @@ footer {
   display: flex;
   height: 100%;
   justify-content: space-between;
+  align-items: center;
   padding: 10px;
   border-radius: 8px;
 }
 
+.sendNewMessagedark {
+  background-image: linear-gradient(to right, rgb(24, 17, 17), rgb(85 6 101));
+  border: 2px solid #d0d0d0;
+  width: 61%;
+  padding: 3px;
+  border-radius: 8px;
+  color: white;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .sendNewMessage button {
+  width: 36px;
+  height: 36px;
+  background-color: #ecefff;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: rgb(0, 50, 77);
+  padding: 0;
+  border: 3px solid #d0d0d0;
+  border-radius: 5px;
+  line-height: 36px;
+  transition: all 0.3s cubic-bezier(0.88, 0.19, 0.37, 1.11);
+}
+.copied_status
+{
+  color: red;
+  background-color: cornsilk;
+  position: absolute;
+  bottom: 64px;
+}
+
+.sendNewMessagedark button {
   width: 36px;
   height: 36px;
   background-color: #ecefff;
@@ -327,7 +335,22 @@ footer {
 }
 
 @media (max-width: 864px) {
-  .sendNewMessage {
+  .sendNewMessage, .sendNewMessagedark{
+    width: 97%;
+  }
+}
+
+.sendNewMessagedark > .darkButton {
+  color: black !important;
+}
+.sendNewMessagedark > .darkButtonSend {
+  background-color: white !important;
+  background-color: white !important;
+  color: black !important;
+}
+
+@media (max-width: 864px) {
+  .sendNewMessage, .sendNewMessagedark{
     width: 97%;
   }
 }
@@ -339,6 +362,10 @@ footer {
   background-color: white !important;
   background-color: white !important;
   color: black !important;
+}
+
+.addfiles {
+  margin-right: 5px;
 }
 
 .sendNewMessage button:hover {
@@ -362,6 +389,8 @@ footer {
 .footer_dark input,
 .footer_dark ::placeholder {
   color: white;
+  border: none;
+  background: none;
 }
 #sendMsgBtn {
   background-color: rgb(0, 50, 77);
@@ -369,8 +398,234 @@ footer {
 }
 
 @media (max-width: 700px) {
-  .sendNewMessage {
+  .sendNewMessage, .sendNewMessagedark{
     width: 98.5%;
     max-width: 700px;
   }
+}
+
+@media (max-width: 790px) {
+  .sendNewMessage, .sendNewMessagedark{
+    width: 95%;
+  }
+}
+
+@media (max-width: 430px) {
+  .sendNewMessage, .sendNewMessagedark{
+    width: 90%;
+    margin-right: 8px;
+  }
+}
+.EmojiToggle {
+  float: right;
+  border: none;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.KeyboardToggle {
+  margin: 0 0 0 5px;
+}
+.EmojiPicker {
+  position: absolute;
+  bottom: 64px;
+}
+.EmojiPicker_dark {
+  position: absolute;
+  bottom: 64px;
+  margin-left: -250px;
+}
+.KeyboardPicker {
+  position: absolute;
+  width: 800px;
+  bottom: 64px;
+}
+.KeyboardPicker_dark {
+  position: absolute;
+  width: 800px;
+  bottom: 70px;
+  color: black;
+  background-color: transparent;
+}
+
+.Speaknow_alert {
+  position: absolute;
+  bottom: 64px;
+  font-size: 18px;
+  width: 130px;
+  height: 45px;
+  margin-left: -52px;
+  display: flex;
+  color: white;
+  border-radius: 10px;
+  background: rgb(0, 50, 77);
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgb(255, 0, 0);
+}
+.scrolltobottom {
+  position: fixed;
+  bottom: 15px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  background-color: rgb(0, 50, 77);
+  color: white;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.scrolltobottomdark {
+  position: fixed;
+  bottom: 15px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 50px;
+  background-color: white !important;
+}
+
+.scrollicon {
+  color: rgb(255, 255, 255);
+}
+
+.scrollicondark {
+  color: #8735d0;
+}
+.loadOlderMessages {
+  background: linear-gradient( to right, #0A7CFF, hsl(212, 100%, 67%) );
+  border-radius: 5px;
+  border: 3px solid #0A7CFF;
+  color:#ffffff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.25em 0.75em;
+  text-transform: uppercase;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0px -1px 5px -3px rgb(106, 101, 145);
+  -webkit-box-shadow: 0px -1px 36px -3px rgb(106, 101, 145);
+  -moz-box-shadow: 0px -1px 36px -3px rgb(106, 101, 145);
+}
+.loadOlderMessages:hover {
+  color: rgb(255, 255, 255);
+  border: 2px solid #FFF;
+  box-shadow: 0 4px 8px 0 #0A7CFF, 0px -1px 5px -3px hsl(212, 100%, 67%), 0 6px 10px 0 #8735d0;
+}
+ .loadOlderMessages_dark {
+  margin: 0 auto;
+  color: #ffffff;
+  background-color: black;
+  border: 3px solid #9240da;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0.25em 0.75em;
+  text-transform: uppercase;  
+  font-size: 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0px -1px 5px -3px rgb(106, 101, 145);
+  -webkit-box-shadow: 0px -1px 36px -3px rgb(106, 101, 145);
+  -moz-box-shadow: 0px -1px 36px -3px rgb(106, 101, 145);
+
+}
+
+.loadOlderMessages_dark:hover {
+  color: rgb(255, 255, 255);
+  border: 2px solid #FFF;
+  box-shadow: 0 4px 8px 0 #9240da, 0px -1px 5px -3px #d643f3, 0 6px 10px 0 #8735d0;
+}
+ 
+.wlcm_dark{
+  background-color: black;
+}
+.wlcm_light{
+  background-color: white;
+}
+@media screen and (max-width: 960px) {
+  .nav-menu {
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    width: 100%;
+    height: 100vh;
+    border-top: 1pxsolid #fff;
+    position: absolute;
+    top: 60px;
+    left: -110%;
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+  .scrolltobottom {
+    right: 10px;
+    bottom: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .scrolltobottomdark {
+    right: 10px;
+    bottom: 75px;
+  }
+
+  .nav-menu.active {
+    background: rgb(22, 21, 21);
+    left: 0px;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+
+  #nav-menu_dark {
+    background: rgb(0, 0, 0);
+  }
+  #nav-menu_light {
+    background: rgb(255, 255, 255);
+  }
+
+  .nav-item a:active {
+    border: none;
+  }
+  .nav-item {
+    border: none;
+    margin: 25px 0px;
+    outline: none;
+  }
+
+  .nav-item:hover {
+    transform: scale(1.2);
+  }
+
+  .nav-item:hover:after {
+    width: 100%;
+  }
+
+  .toggle-nav:hover:after {
+    background: none;
+  }
+
+  .nav-links {
+    border: none;
+  }
+
+  .nav-icon {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 3rem;
+    cursor: pointer;
+  }
+  .nav-icon_dark {
+    color: rgb(252, 249, 249);
+  }
+  .nav-icon_light {
+    color: rgb(0, 0, 0);
+  }
+
 }

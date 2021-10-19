@@ -3,22 +3,45 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.11.2",
+    "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
+    "@material-ui/styles": "^4.11.4",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.6.0",
+    "axios": "^0.21.1",
+    "create-react-app": "^4.0.3",
+    "emailjs-com": "^2.6.4",
     "emoji-mart": "^3.0.1",
     "emoji-picker-react": "^3.4.2",
     "firebase": "^8.2.1",
+    "font-awesome": "^4.7.0",
     "node-sass": "^5.0.0",
     "pattern.css": "^1.0.0",
     "react": "^17.0.1",
+    "react-copy-to-clipboard": "^5.0.3",
     "react-dom": "^17.0.1",
+    "react-email-autocomplete": "^1.3.4",
+    "react-gif-picker": "^1.0.0",
+    "react-geolocation": "^1.0.4",
+    "react-google-login": "^5.2.2",
+    "react-login-github": "^1.0.7",
+    "react-mentions": "^4.3.0",
+    "react-onscreen-keyboard": "^1.0.0",
+    "react-push-notification": "^1.3.0",
+    "react-redux-loading-bar": "^5.0.0",
+    "react-reveal": "^1.2.2",
     "react-router-dom": "^5.2.0",
+    "react-screen-keyboard": "^1.4.1",
     "react-scripts": "4.0.1",
     "react-scrollview": "0.0.3",
+    "react-select-search": "^3.0.7",
+    "react-simple-keyboard": "^3.1.12",
+    "react-speech-recognition": "^3.8.0",
+    "react-top-loading-bar": "^2.0.1",
+    "simple-keyboard": "^3.1.11",
     "styled-components": "^5.2.1",
+    "uuid": "^8.3.2",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
@@ -46,6 +69,9 @@
     ]
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.12.0"
+    "babel-plugin-styled-components": "^1.12.0",
+    "eslint": "^7.26.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "^7.23.2"
   }
 }
